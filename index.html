@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generate Password</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <div class="center">
+      <div id="random-password">
+        <div id="settings">
+          <h1>Customize Your Password</h1>
+          <h3>
+            Create a unique password with a combination of lowercase letters,
+            uppercase letters, numbers and symbols.
+          </h3>
+
+          <!--
+          <label for="alphalower"
+            >Would you like to include lowercase letters?</label
+          >
+          <input type="checkbox" id="alphalower" checked />
+          <div></div>
+            -->
+
+          <label for="alphaupper"
+            >Would you like to include UPPERCASE LETTERS?</label
+          >
+          <input class="checkbox" type="checkbox" id="alphaupper" checked />
+          <div></div>
+
+          <div></div>
+          <label for="numbers">Would you like to include numbers?</label>
+          <input class="checkbox" type="checkbox" id="numbers" checked />
+          <div></div>
+
+          <div></div>
+          <label for="symbols">How about a few special symbols?</label>
+          <input class="checkbox" type="checkbox" id="symbols" checked />
+          <div></div>
+
+          <label for="length"
+            >And finally, how many characters (between 8 - 128)?</label>
+          <div class="range-wrap">
+            <div class="range-value" id="rangeV"></div>
+            <input id="textInput" type="range" min="8" max="128" value="16" step="1">
+          </div>
+          <div></div>
+
+
+
+          <!-- this slidecontainer code works, hiding while I experiment with bubbles
+          <div class="slidecontainer">
+            <label for="length"
+              >And finally, how many characters (between 8 - 128)?</label
+            >
+            <div></div>
+            <input
+              class="slider"
+              id="textInput"
+              type="range"
+              name="rangeInput"
+              min="8"
+              max="128"
+              value="16"
+              onchange="updateTextInput(this.value);"
+            />
+            <div></div> 
+
+            ^^^ this slidecontainer code works, hiding while I experiment with bubbles -->
+
+            <!-- lets hide this until we figure out the script to require min max 
+            <input type="text" id="textInput" value="16" class="textinput" /> -->
+          </div>
+        </div>
+
+        <button id="generate">Generate Password</button>
+        <div></div>
+
+        <input class="password" type="text" id="password" placeholder="placeholder text"/>
+        <div></div>
+        <button id="copy">Copy</button>
+      </div>
+          </div>
+    </div>
+    <script src="assets/script.js"></script>
+  </body>
+</html>
