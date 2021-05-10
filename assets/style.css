@@ -1,45 +1,31 @@
 /* define the area we will center our content, give it some style */
 .center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 1px black solid;
-  height: 90%;
-  width: 90%;
-  background: rgb(215, 210, 245);
-  text-align: center;
-  border-radius: 3px;
-  box-shadow: inset 0px 0px 4px black, 0 0 4px black;
-  line-height: 2em;
-  font-family: monospace;
-  overflow-wrap: break-word;
-}
-
-/* button to generate password, make it large and visible enough to immediately draw the eye */
-#generate {
-  background-color: black;
-  color: white;
-  padding: 10px;
-  margin: 20px 0px 20px 0px;
-  border-radius: 5px;
-}
-
-/* make the button pop off the screen */
-#generate:hover {
-  box-shadow: inset 0px 0px 8px black, 0 0 30px black;
-}
-
-
-#length:hover,
-#copy:hover,
-#password:hover {
-  box-shadow: 0 0 3px black;
+  position: absolute; /* position:absolute means it is positioned relative to its nearest positioned ancestor - in this case body */
+  top: 50%; /* this centers the content vertically */
+  left: 50%; /* this centers the content horizontally */
+  transform: translate(-50%, -50%); /* not entirely certain but I believe this moves the content... honestly not too sure but I think it helps center the content */
+  border: 1px black solid; /* creates a 1 pixel black solid border */
+  height: 90%; /* center will create a window 90% of the vertical viewport */
+  width: 90%; /* center will create a window 90% of the horizontal viewport */
+  background: rgb(215, 210, 245); /* the background of center will have some color */
+  text-align: center; /* aligns the text centrally */
+  border-radius: 3px; /* rounds the corners of the center frame */
+  box-shadow: inset 0px 0px 4px black, 0 0 4px black; /* inset creates an internal shadow along the border, the other text creates a border externally */
+  line-height: 1.5em; /* distance between lines of text */
+  font-family: Tahoma; /* i mean */
+  overflow-wrap: break-word; /* break-word will separate long strings of text to wrap to the next row --- but its not working here to wrap the input.text below! */
 }
 
 h3 {
-  margin: 0% 20% 1% 20%;
-  text-align: center;
+  margin: 0% 20% 1% 20%; /* 20% margin on the right, left to wrap the text centrally */
+}
+
+/* creates a shadow effect on hover */
+#length:hover,
+#copy:hover,
+#password:hover,
+#generate:hover {
+  box-shadow: 0 0 3px black;
 }
 
 input.checkbox {
@@ -47,27 +33,43 @@ input.checkbox {
   height: 15px;
 }
 
-input.password {
-  width: 80%;
-  border-radius: 6px;
-  margin: 10px;
-  font-size: auto;
-  padding: 10px;
-  height: 200px;
+/* button to generate password, make it large and visible enough to immediately draw the eye */
+#generate {
+  background-color: black;
+  color: white;
+  padding: 10px; /* this defines space between text and border */
+  margin: 10px 0px; /* 2 values means top/bottom is 20px, right/left is 0px -- i.e. just give us soom room vertically */
+  border-radius: 5px; /* round them borders */
+  font-size: 2em; /* lets stand out with large text */
 }
 
-input[type=text] {
+/* now this is our trouble area */
+.password {
+  width: 50%; /* text area 80% of the width of the nearest positioned ancestor */
+  border-radius: 6px; /* round them edges */
+  padding: 20px; /* push the text in from the edge of the border */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  margin: 10px 0px;
+  height: 70px;
+}
+
+.range-value {
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
 
-/* bubble for slider */
+#copy {
+  padding: 10px;
+  border-radius: 5px;
+}
 
+/* bubble for slider */
 .range-wrap{
-  width: 60%;
-	position: relative;
-  margin: auto;
-  margin-top: 25px;
+  width: 60%; /* 60% of the width of the nearest positioned ancestor */
+	position: relative; /* relative keeps the text aligned with the slider */
+  margin: auto; /* this centers the content horizontally */
+  margin-top: 25px; /* extra buffer needed on the top so the bubble won't overlap other text */
 }
 
 input[type=range] {
@@ -75,9 +77,11 @@ input[type=range] {
 	margin: 20px 0;
 	width: 100%;
 }
+
 input[type=range]:focus {
 	outline: none;
 }
+
 input[type=range]::-webkit-slider-runnable-track {
 	width: 100%;
 	height: 4px;
