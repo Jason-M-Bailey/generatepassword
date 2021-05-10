@@ -2,21 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Generate Password</title>
     <link rel="stylesheet" href="assets/reset.css">
     <link rel="stylesheet" href="assets/style.css" />
   </head>
+
   <body>
     <div class="center">
       <div id="random-password">
         <div id="settings">
           <h1>Customize Your Password</h1>
-          <h5>
-            Create a unique password with a combination of lowercase letters,
-            uppercase letters, numbers and symbols.
-          </h3>
+          <p>Create a unique password with a combination of lowercase letters, uppercase letters, numbers and symbols.</p>
 
           <!--
           <label for="alphalower">Would you like to include lowercase letters?</label>
@@ -41,7 +39,7 @@
           <div></div>
 
           <label for="length"
-            >And finally, how many characters (between 8 - 128)?</label>
+            >And finally, how many characters?</label>
           <div class="range-wrap">
             <div class="range-value" id="rangeV"></div>
             <input id="textInput" type="range" min="8" max="128" value="16" step="1">
@@ -53,13 +51,10 @@
         <button id="generate">Generate Password</button>
         <div></div>
 
-        <textarea class="password" type="text" id="password" placeholder="placeholder text"></textarea>
-
-        <!-- this worked but wouldn't break-word 
-        <input class="password" type="text" id="password" placeholder="placeholder text"/> -->
+        <textarea class="password" type="text" id="password" placeholder="your new password will be generated here"></textarea>
 
         <div></div>
-        <button id="copy">Copy</button>
+        <button id="copy">COPY</button>
       </div>
           </div>
     </div>
