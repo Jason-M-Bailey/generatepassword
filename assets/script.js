@@ -1,17 +1,17 @@
 // define the characters the password can contain
-const alphalower = "abcdefghijklmnopqrstuvwxyz";
-const alphaupper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const numbers = "0123456789";
-const symbols = "!@#$%^&*_-+=";
+var alphalower = "abcdefghijklmnopqrstuvwxyz";
+var alphaupper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numbers = "0123456789";
+var symbols = "!@#$%^&*_-+=";
 
-// declare variables for each of the elements
-const passwordTxt = document.getElementById("password");
-/* const incAlphalower = document.getElementById("alphalower"); */
-const incAlphaupper = document.getElementById("alphaupper");
-const incNumbers = document.getElementById("numbers");
-const incSymbols = document.getElementById("symbols");
-const length = document.getElementById("textInput");
-const generateBtn = document.getElementById("generate");
+// declare variables for each of the elements - 
+var passwordTxt = document.getElementById("password");
+/* const incAlphalower = document.getElementById("alphalower"); use this if you figure out how to have lowercase as an option */
+var incAlphaupper = document.getElementById("alphaupper");
+var incNumbers = document.getElementById("numbers");
+var incSymbols = document.getElementById("symbols");
+var length = document.getElementById("textInput");
+var generateBtn = document.getElementById("generate");
 
 // when generate password button clicked, check if numbers and symbols boxes are checked, generate password based on length and variables selected
 generateBtn.addEventListener("click", () => {
@@ -24,7 +24,7 @@ generateBtn.addEventListener("click", () => {
 });
 
 // create password
-const generatePassword = (length, characters) => {
+var generatePassword = (length, characters) => {
   let password = "";
   for (let i = 0; i < length; i++) {
     password += characters.charAt(
@@ -35,20 +35,17 @@ const generatePassword = (length, characters) => {
 };
 
 // copy to clipboard
-const copyBtn = document.getElementById("copy");
+var copyBtn = document.getElementById("copy");
 copyBtn.addEventListener("click", () => {
   passwordTxt.select();
   document.execCommand("copy");
   alert("Password Copied");
 });
 
-
 //slider
 function updateTextInput(val) {
   document.getElementById("textInput").value = val;
 }
-
-
 
 // bubbles for slider
 const
