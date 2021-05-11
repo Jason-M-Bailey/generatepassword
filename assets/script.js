@@ -17,13 +17,15 @@ var generateBtn = document.getElementById("generate");
 generateBtn.addEventListener("click", () => {
   let characters = alphalower;
   /* incAlphalower.checked ? (characters += alphalower) : ""; */
-  incAlphaupper.checked ? (characters += alphaupper) : "";
-  incNumbers.checked ? (characters += numbers) : "";
-  incSymbols.checked ? (characters += symbols) : "";
-  passwordTxt.value = generatePassword(length.value, characters);
+  incAlphaupper.checked ? (characters += alphaupper) : ""; //The addition assignment operator (+=) adds the value of the right operand to a variable and assigns the result to the variable. The types of the two operands determine the behavior of the addition assignment operator. Addition or concatenation is possible.
+
+  incNumbers.checked ? (characters += numbers) : ""; // ".checked ?" determines if the option is selected then it will include var numbers 
+  incSymbols.checked ? (characters += symbols) : ""; // what do the colon and quote marks do?
+  passwordTxt.value = generatePassword(length.value, characters); //what does passwordTxt.value do here?
 });
 
 // create password
+// I don't really understand any of this
 var generatePassword = (length, characters) => {
   let password = "";
   for (let i = 0; i < length; i++) {
@@ -35,23 +37,23 @@ var generatePassword = (length, characters) => {
 };
 
 // copy to clipboard
-var copyBtn = document.getElementById("copy");
-copyBtn.addEventListener("click", () => {
-  passwordTxt.select();
-  document.execCommand("copy");
-  alert("Password Copied");
+var copyBtn = document.getElementById("copy"); //gets from the html the id copy
+copyBtn.addEventListener("click", () => { //when the button is clicked do something 
+  passwordTxt.select(); // no idea 
+  document.execCommand("copy"); //copies to clipboard?
+  alert("Password Copied"); //creates popup at top of screen with message
 });
 
 //slider
-function updateTextInput(val) {
-  document.getElementById("textInput").value = val;
+function updateTextInput(val) { // no idea 
+  document.getElementById("textInput").value = val; // no idea 
 }
 
 // bubbles for slider
 const
-	range = document.getElementById('textInput'),
-	rangeV = document.getElementById('rangeV'),
-	setValue = ()=>{
+	range = document.getElementById('textInput'), //find the textInput id
+	rangeV = document.getElementById('rangeV'), //find the rangeV id
+	setValue = ()=>{ // no idea about anything
 		const
 			newValue = Number( (range.value - range.min) * 100 / (range.max - range.min) ),
 			newPosition = 10 - (newValue * 0.2);
